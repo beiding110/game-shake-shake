@@ -1,12 +1,10 @@
-
-
 function ShakeListener(obj) {
     this.onShake = null;
     this.init(obj);
 };
 ShakeListener.prototype = {
     init: function(obj) {
-        window.addEventListener('devicemotion', this.deviceMotionHandler.bind(this), false);
+        document.addEventListener('click', this.deviceMotionHandler.bind(this), false);
 
         this.$settings = obj;
         this.$state = false;
@@ -35,18 +33,7 @@ ShakeListener.prototype = {
 
             this.$last_update = curTime;
 
-            this.$x = acceleration.x;
-            this.$y = acceleration.y;
-            this.$z = acceleration.z;
-
-            var speed = Math.abs((this.$x + this.$y + this.$z) - (this.$last_x + this.$last_y + this.$last_z)) / diffTime * 10000;
-
-            if (speed > this.$_SHAKE_THRESHOLD) {
-                this.onShake && this.onShake();
-            };
-            this.$last_x = this.$x;
-            this.$last_y = this.$y;
-            this.$last_z = this.$z;
+            this.onShake && this.onShake(event);
         }
     },
     begin: function() {

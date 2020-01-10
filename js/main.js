@@ -13,7 +13,7 @@ function setRecord(num) {
 
     var records = document.querySelectorAll('.record');
     records.forEach(function(item) {
-        item.innerHTML = htmlStr;
+        item.innerHTML = htmlStr + '<font style="font-weight:bold;">hit</font>';
     });
 }
 
@@ -23,7 +23,10 @@ var shake = new ShakeListener(),
     time: GAME_LAST_TIME,
     handler: function() {
         shake.destroy();
-        showScene('record');
+
+        setTimeout(function() {
+            showScene('record');
+        }, 1000);
 
         //在此加入结算接口
         //在此加入是否可继续游戏接口
@@ -34,13 +37,33 @@ var shake = new ShakeListener(),
     }
 });
 
-shake.onShake = function() {
+shake.onShake = function(event) {
     total ++;
-
     setRecord(total);
+    window.navigator.vibrate(200);
 
-    window.navigator.vibrate(200)
+    appendStar(event.x, event.y);
 };
+
+function appendStar(x, y) {
+    var img = document.createElement('img');
+    img.src = './img/star.png';
+    img.className = 'hit-stars';
+
+    img.style.left = x + 'px';
+    img.style.top = y + 'px';
+    img.style.opacity = 1;
+
+    document.body.append(img);
+
+    setTimeout(function() {
+        img.style.opacity = 0;
+    }, 100)
+
+    setTimeout(function() {
+        document.body.removeChild(img);
+    }, 200);
+}
 
 function play() {
     total = 0;
@@ -62,7 +85,7 @@ function start(cb) {
             play();
         },
         second: function(time) {
-            var str = !time ? '晃动!' : time;
+            var str = !time ? '点击打年兽!' : time;
             document.querySelector('#start-discount').innerHTML = str;
         }
     });
