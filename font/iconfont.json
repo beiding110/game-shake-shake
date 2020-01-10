@@ -1,0 +1,79 @@
+{
+  "id": "1606211",
+  "name": "摇一摇",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "190271",
+      "name": "数字9",
+      "font_class": "9",
+      "unicode": "e69f",
+      "unicode_decimal": 59039
+    },
+    {
+      "icon_id": "834287",
+      "name": "数字7",
+      "font_class": "7",
+      "unicode": "e628",
+      "unicode_decimal": 58920
+    },
+    {
+      "icon_id": "851723",
+      "name": "数字4",
+      "font_class": "4",
+      "unicode": "e629",
+      "unicode_decimal": 58921
+    },
+    {
+      "icon_id": "1013293",
+      "name": "数字6",
+      "font_class": "6",
+      "unicode": "e70e",
+      "unicode_decimal": 59150
+    },
+    {
+      "icon_id": "1013295",
+      "name": "数字8",
+      "font_class": "8",
+      "unicode": "e710",
+      "unicode_decimal": 59152
+    },
+    {
+      "icon_id": "8822564",
+      "name": "数字1",
+      "font_class": "1",
+      "unicode": "e60f",
+      "unicode_decimal": 58895
+    },
+    {
+      "icon_id": "8822566",
+      "name": "数字2",
+      "font_class": "2",
+      "unicode": "e610",
+      "unicode_decimal": 58896
+    },
+    {
+      "icon_id": "8822568",
+      "name": "数字3",
+      "font_class": "3",
+      "unicode": "e611",
+      "unicode_decimal": 58897
+    },
+    {
+      "icon_id": "8822573",
+      "name": "数字5",
+      "font_class": "5",
+      "unicode": "e613",
+      "unicode_decimal": 58899
+    },
+    {
+      "icon_id": "8822581",
+      "name": "数字0",
+      "font_class": "0",
+      "unicode": "e618",
+      "unicode_decimal": 58904
+    }
+  ]
+}

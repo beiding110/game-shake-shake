@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>摇摇乐</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+
+	<link rel="stylesheet" href="./font/iconfont.css" />
+	<link rel="stylesheet" href="./css/main.css" />
+
+	<script src="./js/shake.js"></script>
+	<script src="./js/clocker.js"></script>
+	<script src="./js/main.js"></script>
+
+	<script src="./js/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+	<div id="scene-play">
+		<div id="record" class="be-center record"></div>
+		<div id="reduce">
+			剩余时间:
+			<span id="time-remain"></span>
+			s
+		</div>
+	</div>
+
+	<div id="scene-start">
+		<span id="start-discount" class="be-center"></span>
+	</div>
+
+	<div id="scene-ready">
+		<div class="be-center">
+			<div id="ready-title">
+				摇摇乐
+			</div>
+			<div class="btn-success" id="btn-start">
+				点击开始
+			</div>
+			<div class="btn-warning btn-back">
+				返回
+			</div>
+		</div>
+	</div>
+
+	<div id="scene-record">
+		<div class="be-center">
+			<div id="your-record">
+				您的分数：
+				<div class="record"></div>
+			</div>
+			<div class="btn-success" id="btn-restart">
+				重新开始
+			</div>
+			<div class="btn-warning btn-back">
+				返回
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript">
+		document.querySelector('#btn-start').addEventListener('click', function() {
+			start();
+		});
+		document.querySelectorAll('.btn-back').forEach(function(item) {
+			item.addEventListener('click', function() {
+				window.history.back();
+			});
+		});
+		document.querySelector('#btn-restart').addEventListener('click', function() {
+			start();
+		});
+
+		//获取是否可玩
+		//是：
+			// start();
+		showScene('ready');
+	</script>
+</body>
+</html>

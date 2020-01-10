@@ -1,0 +1,31 @@
+*{ margin:0; padding:0; }
+body, html{height:100%; position:relative;}
+/* body{background:url(../img/bg.jpg) center center no-repeat; background-size:auto 100%;} */
+
+.be-center{position:absolute; left:50%; top:50%; transform:translate(-50%, -50%);}
+
+div[id^='scene-']{position:fixed; left:0; top:0; right:0; bottom:0;}
+div[class^='btn-']{text-align:center; padding:.1em .6em; border-radius:6px; font-size:28px; color:white; box-shadow:5px 5px 6px rgba(0,0,0,.2); cursor:pointer;}
+div[class^='btn-']:hover, div[class^='btn-']:active{box-shadow:5px 5px 6px rgba(0,0,0,.2) inset;}
+div[class^='btn-'] + div[class^='btn-']{margin-top:.8em;}
+.btn-success{background:#67C23A;}
+.btn-warning{background:#E6A23C;}
+
+.record i{color:#02CA75; margin:0 -.1em;}
+
+/* 游戏中 */
+#scene-play .record{ }
+#scene-play .record i{font-size:60px;}
+#scene-play #reduce{position:absolute; right:0; top:0; background:rgba(0,0,0,.5); color:white; padding:.1em 1em; font-size:14px;}
+
+/* 开始前 */
+#scene-start {background:rgba(255,255,255,.5);}
+#scene-start #start-discount{font-size:60px; color:#02CA75;}
+
+/* 准备界面 */
+#scene-ready #ready-title{margin-bottom:1em; color:#02CA75; font-size:40px; text-align:center; font-weight:bold;}
+
+/* 结算 */
+#scene-record #your-record{font-size:20px; color:#303133; margin-bottom:1em;}
+#scene-record #your-record .record{text-align:center; margin-top:.5em}
+#scene-record #your-record i{font-size:40px;}
