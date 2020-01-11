@@ -24,9 +24,11 @@ var shake = new ShakeListener(),
     handler: function() {
         shake.destroy();
 
+        showScene('start');
+        document.querySelector('#start-discount').innerHTML = 'Stop!';
         setTimeout(function() {
             showScene('record');
-        }, 1000);
+        }, 2000);
 
         //在此加入结算接口
         //在此加入是否可继续游戏接口
